@@ -1,0 +1,33 @@
+# Byte-compiled
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.venv/
+.env/
+
+# Streamlit (legacy)
+.streamlit/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# FAISS cached index (generated at runtime)
+assets/faiss_index/
+
+# HuggingFace model cache
+*.safetensors
+*.bin
+*.h5
+
+# Misc
+*.egg-info/
+dist/
+build/

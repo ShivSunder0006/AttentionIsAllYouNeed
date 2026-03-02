@@ -1,0 +1,10 @@
+gradio
+torch
+transformers
+plotly
+numpy
+langchain-community
+langchain-text-splitters
+sentence-transformers
+faiss-cpu
+pypdf
