@@ -1,10 +1,8 @@
 """Architecture Diagram — data & rendering for the clickable Transformer diagram."""
 
 from __future__ import annotations
-import streamlit as st
-
-
 # ---------------------------------------------------------------------------
+
 # Block definitions  (order = bottom → top of the encoder/decoder stack)
 # ---------------------------------------------------------------------------
 
@@ -196,38 +194,3 @@ DECODER_BLOCKS = [
 ]
 
 
-# ---------------------------------------------------------------------------
-# Rendering helpers
-# ---------------------------------------------------------------------------
-
-def _render_block(block: dict, key_prefix: str) -> None:
-    """Render a single architecture block as a styled expander."""
-    colour = block["color"]
-    with st.expander(f"🔹 {block['name']}  —  {block['short']}", expanded=False):
-        st.markdown(
-            f"<div style='border-left: 4px solid {colour}; padding-left: 12px;'>"
-            f"{block['detail']}</div>",
-            unsafe_allow_html=True,
-        )
-        st.code(block["code"], language="python")
-
-
-def render_architecture_diagram() -> None:
-    """Render the full Encoder–Decoder architecture as two columns of expanders."""
-    col_enc, col_dec = st.columns(2)
-
-    with col_enc:
-        st.markdown(
-            "<h3 style='text-align:center; color:#6C63FF;'>Encoder ×N</h3>",
-            unsafe_allow_html=True,
-        )
-        for i, block in enumerate(ENCODER_BLOCKS):
-            _render_block(block, key_prefix=f"enc_{i}")
-
-    with col_dec:
-        st.markdown(
-            "<h3 style='text-align:center; color:#BA68C8;'>Decoder ×N</h3>",
-            unsafe_allow_html=True,
-        )
-        for i, block in enumerate(DECODER_BLOCKS):
-            _render_block(block, key_prefix=f"dec_{i}")
