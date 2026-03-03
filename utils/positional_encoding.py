@@ -44,15 +44,13 @@ def plot_pe_heatmap(pe_matrix: np.ndarray, seq_len: int, d_model: int) -> go.Fig
             font=dict(size=18, color="#E0E0E0"),
         ),
         xaxis=dict(
-            title="Embedding Dimension",
+            title=dict(text="Embedding Dimension", font=dict(color="#E0E0E0")),
             tickfont=dict(color="#B0B0B0"),
-            titlefont=dict(color="#E0E0E0"),
             showgrid=False,
         ),
         yaxis=dict(
-            title="Position in Sequence",
+            title=dict(text="Position in Sequence", font=dict(color="#E0E0E0")),
             tickfont=dict(color="#B0B0B0"),
-            titlefont=dict(color="#E0E0E0"),
             autorange="reversed",
             showgrid=False,
         ),

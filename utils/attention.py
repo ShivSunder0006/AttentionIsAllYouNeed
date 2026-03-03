@@ -76,14 +76,14 @@ def plot_attention_heatmap(
     fig.update_layout(
         title=dict(text=title, font=dict(size=16, color="#E0E0E0")),
         xaxis=dict(
-            title="Key Tokens", tickangle=-45,
+            title=dict(text="Key Tokens", font=dict(color="#E0E0E0")), tickangle=-45,
             tickfont=dict(color="#B0B0B0", size=11),
-            titlefont=dict(color="#E0E0E0"), showgrid=False, side="bottom",
+            showgrid=False, side="bottom",
         ),
         yaxis=dict(
-            title="Query Tokens",
+            title=dict(text="Query Tokens", font=dict(color="#E0E0E0")),
             tickfont=dict(color="#B0B0B0", size=11),
-            titlefont=dict(color="#E0E0E0"), autorange="reversed", showgrid=False,
+            autorange="reversed", showgrid=False,
         ),
         paper_bgcolor="#0E1117", plot_bgcolor="#0E1117",
         margin=dict(l=80, r=30, t=50, b=100),
